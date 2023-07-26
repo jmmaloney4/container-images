@@ -47,7 +47,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v4.1.1
         with:
-          context: .
+          context: ${{ matrix.image }}
           file: ./Dockerfile
           platforms: ${{ matrix.platforms }}
           push: true
