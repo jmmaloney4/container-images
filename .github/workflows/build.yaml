@@ -44,11 +44,12 @@ jobs:
             type=edge
             type=sha,prefix=git-
       - name: Build and push Docker images
+        id: docker_build
         uses: docker/build-push-action@v4.1.1
         with:
           context: .
           file: ./Dockerfile
-          platforms: $${{ matrix.platforms }}
+          platforms: ${{ matrix.platforms }}
           push: true
           tags: ${{ steps.docker_meta.outputs.tags }}
           labels: ${{ steps.docker_meta.outputs.labels }}
