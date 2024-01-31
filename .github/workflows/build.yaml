@@ -17,7 +17,7 @@ jobs:
           - image: rust-script
             platforms: "linux/amd64,linux/arm64"
     steps:
-      - uses: actions/checkout@v3.5.3
+      - uses: actions/checkout@v3.6.0
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3.0.0
       - name: Set up Docker Context for Buildx
